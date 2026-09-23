@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Resmi Kasur & Springbed</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 800: '#0f172a', 900: '#0a0f1d', primary: '#1e293b', accent: '#1e3a8a' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .navy-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl navy-gradient flex items-center justify-center text-gold-400 font-bold text-xl shadow-md">
+                        <i class="fa-solid font-bold" id="logo-icon">A</i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-black tracking-tight text-slate-900 leading-none" id="brand-title">
+                            <!-- Injected by JS -->
+                        </span>
+                        <span class="text-[10px] tracking-widest text-slate-500 uppercase font-semibold" id="brand-tagline"></span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex space-x-8 font-medium text-sm text-slate-600">
+                    <a href="#beranda" class="hover:text-blue-900">Beranda</a>
+                    <a href="#katalog" class="hover:text-blue-900">Katalog</a>
+                </nav>
+
+                <div class="hidden md:flex items-center">
+                    <a id="btn-wa-header" href="#" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 shadow-lg shadow-emerald-600/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pesan via WA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner / Hero Section -->
+    <section id="beranda" class="relative navy-gradient text-white py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-gold-400 text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-star text-gold-400"></i>
+                        <span id="banner-badge"></span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight" id="banner-title">
+                        <!-- Injected by JS -->
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed" id="banner-desc">
+                        <!-- Injected by JS -->
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#katalog" class="w-full sm:w-auto gold-gradient hover:opacity-95 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-gold-500/20 text-center transition-transform hover:scale-105">
+                            Lihat Katalog Produk
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Banner Image -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-gold-500 to-blue-600 rounded-3xl opacity-30 blur-2xl"></div>
+                    <div class="relative bg-slate-900 border border-white/10 rounded-3xl p-3 shadow-2xl overflow-hidden group">
+                        <img id="banner-img" src="" alt="Banner Promo" class="w-full h-[350px] sm:h-[450px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-2xl text-slate-900 flex items-center justify-between shadow-xl">
+                            <div>
+                                <p class="text-xs uppercase font-bold text-slate-500 tracking-wider">Best Seller</p>
+                                <p class="font-bold text-base text-slate-900" id="banner-promo-name"></p>
+                            </div>
+                            <span class="bg-gold-500 text-slate-950 font-bold text-xs px-3 py-1.5 rounded-lg" id="banner-promo-badge"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Section -->
+    <section id="katalog" class="py-20 bg-slate-100/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2">Pilihan Terbaik</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Katalog Produk</h3>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                    <button onclick="filterProduct('all', event)" class="filter-btn active px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-navy-800 text-white">Semua</button>
+                    <button onclick="filterProduct('springbed', event)" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-200">Spring Bed</button>
+                    <button onclick="filterProduct('orthopedic', event)" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-200">Orthopedic</button>
+                    <button onclick="filterProduct('matras', event)" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-200">Matras Lipat</button>
+                    <button onclick="filterProduct('aksesoris', event)" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-200">Aksesoris</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+                <!-- Produk di-render otomatis oleh JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Detail Produk -->
+    <div id="product-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="text-xs font-bold text-gold-600 uppercase tracking-widest">Detail Produk</span>
+            <h3 id="modal-title" class="text-2xl font-bold text-slate-900 mt-1 mb-2"></h3>
+            <p id="modal-price" class="text-2xl font-black text-blue-900 mb-4"></p>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6 text-sm text-slate-600" id="modal-desc"></div>
+            <a id="modal-wa-link" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl text-center flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/20">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Tanya / Pesan Sekarang</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a id="btn-wa-floating" href="#" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-emerald-500/50 hover:scale-110 transition-transform">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Muat file data.js terlebih dahulu -->
+    <script src="data.js"></script>
+    
+    <!-- Script Rendering Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderHeaderAndBanner();
+            renderProducts(websiteData.katalog);
+        });
+
+        function renderHeaderAndBanner() {
+            // Brand & Logo
+            document.getElementById('logo-icon').innerText = websiteData.brand.namaUtama.charAt(0);
+            document.getElementById('brand-title').innerHTML = `${websiteData.brand.namaUtama} <span class="text-gold-500">${websiteData.brand.namaSub}</span>`;
+            document.getElementById('brand-tagline').innerText = websiteData.brand.tagline;
+
+            // Link WA Header & Floating
+            const waUrl = `https://wa.me/${websiteData.brand.nomorWA}?text=Halo%20${encodeURIComponent(websiteData.brand.namaUtama)},%20saya%20ingin%20tanya%20produk`;
+            document.getElementById('btn-wa-header').href = waUrl;
+            document.getElementById('btn-wa-floating').href = waUrl;
+
+            // Banner
+            document.getElementById('banner-badge').innerText = websiteData.banner.badge;
+            document.getElementById('banner-title').innerText = websiteData.banner.judulBesar;
+            document.getElementById('banner-desc').innerText = websiteData.banner.deskripsi;
+            document.getElementById('banner-img').src = websiteData.banner.foto;
+            document.getElementById('banner-promo-name').innerText = websiteData.banner.namaProdukPromo;
+            document.getElementById('banner-promo-badge').innerText = websiteData.banner.badgeDiskon;
+        }
+
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            items.forEach(item => {
+                const waProductUrl = `https://wa.me/${websiteData.brand.nomorWA}?text=Halo%20${encodeURIComponent(websiteData.brand.namaUtama)},%20saya%20tertarik%20membeli%20${encodeURIComponent(item.nama)}`;
+                
+                const card = document.createElement('div');
+                card.className = `product-item ${item.kategori} bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all group`;
+                
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-64 bg-slate-100">
+                        <img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        ${item.badge ? `<span class="absolute top-4 left-4 ${item.badgeWarna} text-xs font-bold px-3 py-1 rounded-full">${item.badge}</span>` : ''}
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-slate-500 font-medium mb-1">${item.labelKategori}</div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">${item.nama}</h4>
+                        <p class="text-xs text-slate-600 mb-4">${item.deskripsiSingkat}</p>
+                        <div class="flex items-baseline space-x-2 mb-4">
+                            <span class="text-xl font-extrabold text-blue-900">${item.harga}</span>
+                            ${item.hargaCoret ? `<span class="text-xs text-slate-400 line-through">${item.hargaCoret}</span>` : ''}
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openModal('${item.id}')" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold py-3 rounded-xl transition-colors">Detail</button>
+                            <a href="${waProductUrl}" target="_blank" class="w-1/2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-3 rounded-xl text-center flex items-center justify-center space-x-1 shadow-md shadow-emerald-600/20">
+                                <i class="fa-brands fa-whatsapp"></i><span>Beli WA</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProduct(category, evt) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-navy-800', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            evt.target.classList.remove('bg-white', 'text-slate-600');
+            evt.target.classList.add('bg-navy-800', 'text-white');
+
+            if (category === 'all') {
+                renderProducts(websiteData.katalog);
+            } else {
+                const filtered = websiteData.katalog.filter(item => item.kategori === category);
+                renderProducts(filtered);
+            }
+        }
+
+        function openModal(id) {
+            const item = websiteData.katalog.find(p => p.id == id);
+            if (!item) return;
+
+            document.getElementById('modal-title').innerText = item.nama;
+            document.getElementById('modal-price').innerText = item.harga;
+            document.getElementById('modal-desc').innerText = item.deskripsiLengkap;
+            document.getElementById('modal-wa-link').href = `https://wa.me/${websiteData.brand.nomorWA}?text=Halo%20${encodeURIComponent(websiteData.brand.namaUtama)},%20saya%20ingin%20tanya%20detail%20${encodeURIComponent(item.nama)}`;
+            
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
