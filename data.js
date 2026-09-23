@@ -3,18 +3,18 @@ const websiteData = {
     brand: {
         namaUtama: "AREMA",
         namaSub: "KASUR",
-        tagline: "Mattress Store",
-        nomorWA: "6281234567890" // Format: 628xxx (tanpa tanda + atau 0 di depan)
+        tagline: "Toko Favorit Warga Malang Raya",
+        nomorWA: "6288989684438" // Format: 628xxx (tanpa tanda + atau 0 di depan)
     },
 
     // 2. BANNER PROMOSI UTAMA (HERO SECTION)
     banner: {
-        badge: "Kasur Orthopedic & Spring Bed No. 1",
-        judulBesar: "Tidur Nyenyak Maksimal, Bangun Segar Setiap Hari.",
-        deskripsi: "Rasakan pengalaman tidur kelas hotel berbintang dengan teknologi per pendukung tulang belakang dan busa high-density. Garansi resmi hingga 15 tahun.",
-        foto: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=800",
+        badge: "Kualitas dan Pelayanan No.1",
+        judulBesar: "Toko Kasur Favorit, Warga Malang Raya.",
+        deskripsi: "Rasakan kemewahan sandaran dan divan laci untuk kamar tidur keluarga anda",
+        foto: "https://down-id.img.susercontent.com/file/id-11134207-81ztl-mrqwwc6v44qv31.webp",
         badgeDiskon: "Promo 40%",
-        namaProdukPromo: "Arema Luxury Orthopedic"
+        namaProdukPromo: "SET DIVAN LACI"
     },
 
     // 3. KATALOG PRODUK (Ubah, Tambah, atau Hapus Produk di Sini)
